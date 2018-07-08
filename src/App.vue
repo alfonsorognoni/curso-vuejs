@@ -1,8 +1,15 @@
 <template lang="pug">
   #app
-    input(v-model="name")
-    button(@click="format") Format
-    p {{ formattedName }}
+    section.section
+      nav.nav.has-shadow
+        .container.field.has-addons
+          input.input.is-large(type="text", placeholder="Buscar Canciones")
+          a.button.is-info.is-large Buscar
+          a.button.is-danger.is-large &times;
+      //results
+      .container
+        .columns
+          .column
 </template>
 
 <script>
@@ -10,14 +17,11 @@ export default {
   name: 'app',
   data () {
     return {
-      name: '',
-      formattedName: ''
+
     }
   },
   methods: {
-    format () {
-      this.formattedName = this.name.split(' ').join('-').toUpperCase()
-    }
+
   }
 }
 </script>
