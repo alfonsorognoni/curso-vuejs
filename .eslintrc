@@ -5,5 +5,12 @@
   },
   "plugins": [
     "html"
-  ]
+  ],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "localStorage": true,
+    "fetch": true
+  }
 }
