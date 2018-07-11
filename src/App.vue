@@ -47,11 +47,14 @@
 </template>
 
 <script>
+import trackService from './services/track.js'
+/*
 const tracks = [
   { name: 'Muchacha ojos de papel', artist: 'Almendra' },
   { name: '11 y 6', artist: 'Fito Paez' },
   { name: 'Puente', artist: 'Gustavo Cerati' }
 ]
+*/
 /*
 const tasks = [
   { title: 'Tarea 1', time: 1 }
@@ -88,7 +91,10 @@ export default {
   },
   methods: {
     search () {
-      this.tracks = tracks
+      trackService.search(this.searchQuery)
+        .then((res) => {
+          console.log(res)
+        })
     },
     addTask () {
       if (this.newTask.title !== '' && this.newTask.time > 0) {
