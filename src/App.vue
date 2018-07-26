@@ -1,5 +1,6 @@
 <template lang="pug">
   #app
+    vm-header
     section.section
       nav.nav.has-shadow
         .container
@@ -17,38 +18,17 @@
       //results
       .container.results
         .columns
-          .column(v-for="t in tracks") {{ t.name }} - {{ t.artists[0].name }}
-      .container.results
-        .columns
-          .column
-
-            .field.is-grouped
-              p.control.is-expanded
-                input.input(
-                  v-model="newTask.title",
-                  type="text",
-                  placeholder="Task Title"
-                )
-              p.control.is-expanded
-                input.input(
-                  v-model="newTask.time",
-                  type="text",
-                  placeholder="Task Time"
-                )
-              p.control
-                a.button.is-info(@click="addTask") Add
-              p.control
-                a.button.is-danger(@click="cancelTask") Cancel
-
-            p {{ name }}
-            ul
-              li(v-for="(task, index) in tasks") {{ task.title }} - {{ task.time }}
-                a.button.is-danger(@click="removeTask(index)") Remove Task
-            p Total time: {{ totalTime }}
+          .column(v-for="t in tracks")
+            vm-track(:track="t")
+            | {{ t.name }} - {{ t.artists[0].name }}
+    vm-footer
 </template>
 
 <script>
-import trackService from './services/track.js'
+import trackService from '@/services/track.js'
+import VmFooter from '@/components/layout/Footer.vue'
+import VmHeader from '@/components/layout/Header.vue'
+import VmTrack from '@/components/Track.vue'
 /*
 const tracks = [
   { name: 'Muchacha ojos de papel', artist: 'Almendra' },
@@ -63,6 +43,11 @@ const tasks = [
 */
 export default {
   name: 'app',
+  components: {
+    VmFooter,
+    VmHeader,
+    VmTrack
+  },
   data () {
     return {
       searchQuery: '',

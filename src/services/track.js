@@ -7,7 +7,7 @@ trackService.search = function (q) {
 
   return vueMusicService.get('/search', {
     headers: {
-      'Authorization': 'Bearer ' + 'BQAAVraY1YyqExLXLgYhqaZ_Eh0ONlRP0aSfFz1lDc89cOQgqrKTm1mmb9xssuQRtGsERAHAnt8s5VYiSvW-EKmaJtnRbWL1-eaU9oNzplK_FF_v73qC5xjH_rW-hhNV9qWClVin_duVg_G3FhSq1PirQWfe1zFO'
+      'Authorization': 'Bearer ' + 'BQAeinfNvNyJkUrd4ZnWw_PDcHeHInaWdsARCBed2J6pWvR-2Hk_yZIVrMJ7ZuLjZQRils-2CBMB6QkJiugYRbr3hYNu9HtINXvrt17nAL7MQHkIQRkUiP4-QEz41h_5cPIq9OU8cVkYLBdw_3IgrmBQsIrYBYDI'
     },
     params: {
       q,
