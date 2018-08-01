@@ -11,4 +11,12 @@
       .container.has-text-centered
         h1.title Vue Music
         h2.subtitle Canciones que están VueNisimas
+        vm-player
 </template>
+
+<script>
+import VmPlayer from '@/components/Player.vue'
+export default {
+  components: { VmPlayer }
+}
+</script>
